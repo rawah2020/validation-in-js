@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <title> 
+
+        </title>
+    </head> 
+    <body> 
+
+        <form name="myForm" onesubmit="validateform()"> 
+    Name: <input type="text name=fname"> 
+    <input type="submit" value="submit"> 
+    <p id="message"> </p>  
+</form>
+
+
+
+    <p> Enter a number and click ok</p> 
+    <input id="id1" type="number" min="100" max="300" required> 
+    <button  onclick="myFunction()">  ok </button>  
+
+    <p> if the number id less than 100 or greater than 300, an error will be displayed</p> 
+    <p id="result"> </p>
+
+
+    <script> 
+
+function validateform(){ 
+
+
+    var x=document.forms["myForm"]["fname"].value; 
+    if (x==""){
+
+    alert("Name must be filled out"); 
+
+    return false; 
+    }
+} 
+
+
+
+
+
+
+function myFunction(){ 
+
+var inObj = document.getElementById("id1"); 
+if (!inObj.checkValidity()){ 
+
+
+    document.getElementById("result").innerHTML=inObj.validationMessage; 
+
+
+    }
+   else { 
+    document.getElementById("result").innerHTML="input ok";
+   }
+
+
+
+    
+}
+
+    </script>
+        
+    </body>
+</html>
